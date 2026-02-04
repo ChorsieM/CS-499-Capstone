@@ -1,0 +1,40 @@
+{{!-- ENHANCEMENT (Category Two): Rooms view shows results of filter/sort/search --}}
+
+<h1>{{title}}</h1>
+
+<form method="GET" action="/rooms">
+  <label>Search (name/tag):</label>
+  <input type="text" name="q" value="{{filters.q}}" />
+
+  <label>Max Price:</label>
+  <input type="number" name="maxPrice" value="{{filters.maxPrice}}" />
+
+  <label>Min Rating:</label>
+  <input type="number" step="0.1" name="minRating" value="{{filters.minRating}}" />
+
+  <label>Sort:</label>
+<select name="sort">
+  <option value="">None</option>
+  <option value="price">Price (Low → High)</option>
+  <option value="rating">Rating (High → Low)</option>
+</select>
+
+
+  <button type="submit">Apply</button>
+</form>
+
+<hr/>
+
+{{#if rooms.length}}
+  <ul>
+    {{#each rooms}}
+      <li>
+        <strong>{{name}}</strong> —
+        ${{pricePerNight}}/night —
+        Rating: {{rating}}
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No rooms matched your filters.</p>
+{{/if}}
