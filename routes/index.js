@@ -3,7 +3,7 @@ var router = express.Router();
 
 // ENHANCEMENT: Import service layer for home page data
 // ENHANCEMENT (Category Two): rooms service handles filter/sort/search logic
-const roomsService = require('../services/roomsService');
+const roomsService = require('../services/roomsDbService');
 const homeService = require('../services/homeService');
 
 /* GET home page. */
