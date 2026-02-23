@@ -1,0 +1,18 @@
+{{!-- ENHANCEMENT NOTES:
+Updated the homepage template to display additional fields from the homeService view model (subtitle/message).
+--}}
+<h1>{{title}}</h1>
+
+{{#if subtitle}}
+  <h2>{{subtitle}}</h2>
+{{/if}}
+
+{{#if message}}
+  <p>{{message}}</p>
+{{else}}
+  <p>Welcome to {{title}}</p>
+{{/if}}
+
+<p>
+  <a href="/rooms">View rooms (dynamic list)</a>
+</p>
